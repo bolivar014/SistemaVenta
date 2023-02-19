@@ -11,8 +11,8 @@ using SistemaVenta.DAL.DBContext;
 using Microsoft.EntityFrameworkCore;
 using SistemaVenta.DAL.Interfaces;
 using SistemaVenta.DAL.Implementacion;
-//using SistemaVenta.BLL.Interfaces;
-//using SistemaVenta.BLL.Implementacion;
+using SistemaVenta.BLL.Interfaces;
+using SistemaVenta.BLL.Implementacion;
 
 
 namespace SistemaVenta.IOC
@@ -31,6 +31,9 @@ namespace SistemaVenta.IOC
 
             // 
             services.AddScoped<IVentaRepository, VentaRepository>();
+
+            // Dependencia para envio de emails
+            services.AddScoped<ICorreoService, CorreoService>();
         }
     }
 }
