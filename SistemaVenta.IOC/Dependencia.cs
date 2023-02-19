@@ -43,6 +43,9 @@ namespace SistemaVenta.IOC
 
             // Dependencia para el rol
             services.AddScoped<IRolService, RolService>();
+
+            // Dependencia de usuario
+            services.AddScoped<IUsuarioService, UsuarioService>();
         }
     }
 }
