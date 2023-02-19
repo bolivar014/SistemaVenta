@@ -1,0 +1,12 @@
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.IOC.deps.json
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.IOC.dll
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.IOC.pdb
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.csproj.AssemblyReference.cache
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.AssemblyInfoInputs.cache
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.AssemblyInfo.cs
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.csproj.CoreCompileInputs.cache
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.dll
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\refint\SistemaVenta.IOC.dll
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.pdb
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\ref\SistemaVenta.IOC.dll
