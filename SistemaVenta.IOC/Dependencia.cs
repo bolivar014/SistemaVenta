@@ -37,6 +37,9 @@ namespace SistemaVenta.IOC
 
             // Dependencia para FireBase
             services.AddScoped<IFireBaseService, FireBaseService>();
+
+            // Dependencia para encriptación y generación de contraseñas
+            services.AddScoped<IUtilidadesService, UtilidadesService>();
         }
     }
 }
