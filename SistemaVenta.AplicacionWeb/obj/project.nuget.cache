@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "BQ88S+5j3manT93BAY9kIYF5HMNEa56PCZfVZe1Tu+q/ct4htNNIkTp+NGP7JD1BCoSJPJgF0eE4ROgBRvMX6Q==",
+  "dgSpecHash": "veL7Z+pVRFi3bA7Erik6+uTNbcuyHVjxk71M46pyJDSEvdh9wy5nhcUDIXL/sgxIaZZjUG98MTWDVjxpnbT2Jg==",
   "success": true,
   "projectFilePath": "C:\\Users\\JUAN-\\OneDrive\\Documentos\\documentacion\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JUAN-\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\JUAN-\\.nuget\\packages\\firebaseauthentication.net\\3.7.1\\firebaseauthentication.net.3.7.1.nupkg.sha512",
+    "C:\\Users\\JUAN-\\.nuget\\packages\\firebasestorage.net\\1.0.3\\firebasestorage.net.1.0.3.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
