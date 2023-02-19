@@ -12,7 +12,20 @@
 	Entity: Entidad "Modelos de datos"
 	IOC: 
 
-[*] 
+[*] Referencias de proyectos
+	DAL => Entity
+
+	BLL => DALL
+	BLL => Entity
+
+	IOC => BLL
+	IOC => DAL
+
+	AplicacionWeb => BLL
+	AplicacionWeb => Entity
+	AplicacionWeb => IOC
+
+
 
 [*] 
 
