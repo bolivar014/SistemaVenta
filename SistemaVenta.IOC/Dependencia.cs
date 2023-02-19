@@ -40,6 +40,9 @@ namespace SistemaVenta.IOC
 
             // Dependencia para encriptación y generación de contraseñas
             services.AddScoped<IUtilidadesService, UtilidadesService>();
+
+            // Dependencia para el rol
+            services.AddScoped<IRolService, RolService>();
         }
     }
 }
