@@ -1,3 +1,6 @@
+// Agregamos referencia a automapper
+using SistemaVenta.AplicacionWeb.Utilidades.Automapper;
+
 // Agregamos referencia
 using SistemaVenta.IOC;
 
@@ -8,6 +11,9 @@ builder.Services.AddControllersWithViews();
 
 // Inyección de dependencias
 builder.Services.InyectarDependencia(builder.Configuration);
+
+// Inyectamos depenencias AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 var app = builder.Build();
 
