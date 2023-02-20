@@ -163,6 +163,7 @@ namespace SistemaVenta.BLL.Implementacion
                 usuario_editar.Correo = entidad.Correo;
                 usuario_editar.Telefono = entidad.Telefono;
                 usuario_editar.IdRol = entidad.IdRol;
+                usuario_editar.EsActivo = entidad.EsActivo;
 
                 // Si nombre de foto es vacio | procedemos a sincronizar
                 if(usuario_editar.NombreFoto == "")
@@ -180,7 +181,7 @@ namespace SistemaVenta.BLL.Implementacion
                 // Verificamos respuesta
                 bool respuesta = await _repositorio.Editar(usuario_editar);
 
-                if (respuesta)
+                if (!respuesta)
                 {
                     throw new TaskCanceledException("No se pudo modificar el usuario...");
                 }

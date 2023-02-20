@@ -71,7 +71,7 @@ $(document).ready(function () {
                  "width": "80px"
              }
          ],
-         order: [[0, "desc"]],
+        order: [[0, "desc"]],
         dom: "Bfrtip",
         buttons: [
             {
@@ -146,22 +146,47 @@ $("#btnGuardar").click(function () {
     formData.append("modelo", JSON.stringify(modelo));
 
     // Generamos animación de procesando...
-    $("modalData").find("div.modal-content").LoadingOverlay("show");
+    $("#modalData").find("div.modal-content").LoadingOverlay("show");
 
     if (modelo.idUsuario == 0) {
+        // Evento que se ejecuta cuando es para "Crear"
         fetch("/Usuario/Crear", {
             method: "POST",
             body: formData
         })
         .then(response => {
-            $("modalData").find("div.modal-content").LoadingOverlay("hide");
+            $("#modalData").find("div.modal-content").LoadingOverlay("hide");
             return response.ok ? response.json() : Promise.reject(response);
         })
         .then(responseJSON => {
             if (responseJSON.estado) {
                 tablaData.row.add(responseJSON.objeto).draw(false);
-                $("modalData").modal("hide");
+                $("#modalData").modal("hide");
                 swal("Listo!", "Usuario creado", "success");
+            } else {
+                swal("Lo sentimos", responseJSON.mensaje, "error");
+            }
+        })
+    }
+    else
+    {
+        // Evento que se ejecuta cuando es para "Editar"
+        fetch("/Usuario/Editar", {
+            method: "PUT",
+            body: formData
+        })
+        .then(response => {
+            $("#modalData").find("div.modal-content").LoadingOverlay("hide");
+            return response.ok ? response.json() : Promise.reject(response);
+        })
+        .then(responseJSON => {
+            if (responseJSON.estado) {
+                tablaData.row(filaSeleccionada).data(responseJSON.objeto).draw(false);
+                // Liberamos variable
+                filaSeleccionada = null;
+
+                $("#modalData").modal("hide");
+                swal("Listo!", "Usuario Actualizado", "success");
             } else {
                 swal("Lo sentimos", responseJSON.mensaje, "error");
             }
@@ -169,3 +194,72 @@ $("#btnGuardar").click(function () {
     }
 });
 
+// inicializo variable auxiliar
+let filaSeleccionada;
+
+// Evento callback para editar usuario
+$("#tbdata tbody").on("click", ".btn-editar", function () {
+    // Accedemos al tr que recibio el evento onclick
+    if ($(this).closest("tr").hasClass("child")) {
+        filaSeleccionada = $(this).closest("tr").prev();
+    } else {
+        filaSeleccionada = $(this).closest("tr");
+    }
+
+    // Accedemos al objeto de datos del registro seleccionado...
+    const data = tablaData.row(filaSeleccionada).data();
+
+    // Abrimos modal con su respectiva información
+    mostrarModal(data);
+});
+
+
+
+// Evento callback para eliminar usuario
+$("#tbdata tbody").on("click", ".btn-eliminar", function () {
+    let fila;
+
+    // Accedemos al tr que recibio el evento onclick
+    if ($(this).closest("tr").hasClass("child")) {
+        fila = $(this).closest("tr").prev();
+    } else {
+        fila = $(this).closest("tr");
+    }
+
+    // Accedemos al objeto de datos del registro seleccionado...
+    const data = tablaData.row(fila).data();
+
+    swal({
+        title: "¿Estas seguro?",
+        text: `Eliminar al usuario "${data.nombre}"?`,
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonClass: "btn-danger",
+        confirmButtonText: "Si, Eliminar",
+        cancelButtonText: "No, Cancelar",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (respuesta) {
+        if (respuesta) {
+            $(".showSweetAlert").LoadingOverlay("show");
+
+            // Evento que se ejecuta cuando es para "Editar"
+            fetch(`/Usuario/Eliminar?IdUsuario=${data.idUsuario}`, {
+                method: "DELETE"
+            })
+            .then(response => {
+                $(".showSweetAlert").LoadingOverlay("hide");
+                return response.ok ? response.json() : Promise.reject(response);
+            })
+            .then(responseJSON => {
+                if (responseJSON.estado) {
+                    tablaData.row(fila).remove().draw();
+   
+                    swal("Listo!", "El usuario fue eliminado", "success");
+                } else {
+                    swal("Lo sentimos", responseJSON.mensaje, "error");
+                }
+            })
+        }
+    })
+});
