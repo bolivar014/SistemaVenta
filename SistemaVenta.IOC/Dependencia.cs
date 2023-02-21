@@ -46,6 +46,9 @@ namespace SistemaVenta.IOC
 
             // Dependencia de usuario
             services.AddScoped<IUsuarioService, UsuarioService>();
+
+            // Dependencia de negocio
+            services.AddScoped<INegocioService, NegocioService>();
         }
     }
 }
