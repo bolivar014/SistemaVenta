@@ -14,8 +14,10 @@ let tablaData;
 
 // Cargamos cuando ya se hubiese inicializado el proyecto
 $(document).ready(function () {
+    // Fetch para obtener lista de roles
     fetch("/Usuario/ListaRoles")
-    .then(response => {
+        .then(response => {
+        // En caso de obtener un response correcto, retorna el JSON. de lo contrario, cancela
         return response.ok ? response.json() : Promise.reject(response);
     })
     .then(responseJSON => {
