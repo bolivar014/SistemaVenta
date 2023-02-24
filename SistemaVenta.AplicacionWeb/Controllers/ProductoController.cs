@@ -36,7 +36,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             List<VMProducto> vmProductoLista = _mapper.Map<List<VMProducto>>(await _productoServicio.Lista());
 
             // Retornamos
-            return StatusCode(StatusCodes.Status200OK, vmProductoLista);
+            return StatusCode(StatusCodes.Status200OK, new { data = vmProductoLista });
         }
 
         [HttpPost]
@@ -91,16 +91,20 @@ namespace SistemaVenta.AplicacionWeb.Controllers
                 // Convertimos a modelo VMProducto
                 VMProducto vmProducto = JsonConvert.DeserializeObject<VMProducto>(modelo);
 
+                string nombreImagen = "";
                 Stream imagenStream = null;
 
                 // Validamos que llegue algún stream de imagen
                 if (imagen != null)
                 {
+                    string nombre_en_codigo = Guid.NewGuid().ToString("N");
+                    string extension = Path.GetExtension(imagen.FileName);
+                    nombreImagen = string.Concat(nombre_en_codigo, extension);
                     imagenStream = imagen.OpenReadStream();
                 }
 
                 // Generamos mapeo para la creación de producto
-                Producto producto_editado = await _productoServicio.Crear(_mapper.Map<Producto>(vmProducto), imagenStream);
+                Producto producto_editado = await _productoServicio.Editar(_mapper.Map<Producto>(vmProducto), imagenStream, nombreImagen);
 
                 // Invertimos la creación del modelo producto
                 vmProducto = _mapper.Map<VMProducto>(producto_editado);
