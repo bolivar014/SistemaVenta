@@ -245,28 +245,32 @@ $("#btnTerminarVenta").click(function () {
     $("#btnTerminarVenta").LoadingOverlay("show");
 
     // Fetch para obtener lista de Tipos de documentos
-    fetch("/Venta/RegistrarVenta")
-        .then(response => {
+    fetch("/Venta/RegistrarVenta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json; chatset=utf-8" },
+        body: JSON.stringify(venta)
+    })
+    .then(response => {
 
-            // ejecutamos Animación de procesando
-            $("#btnTerminarVenta").LoadingOverlay("hide");
+        // ejecutamos Animación de procesando
+        $("#btnTerminarVenta").LoadingOverlay("hide");
 
-            // En caso de obtener un response correcto, retorna el JSON. de lo contrario, cancela
-            return response.ok ? response.json() : Promise.reject(response);
-        })
-        .then(responseJSON => {
-            if (responseJSON.estado) {
-                ProductosParaVenta = [];
-                mostrarProducto_Precios();
+        // En caso de obtener un response correcto, retorna el JSON. de lo contrario, cancela
+        return response.ok ? response.json() : Promise.reject(response);
+    })
+    .then(responseJSON => {
+        if (responseJSON.estado) {
+            ProductosParaVenta = [];
+            mostrarProducto_Precios();
 
-                $("#txtDocumentoCliente").val("");
-                $("#txtNombreCliente").val("");
-                $("#cboTipoDocumentoVenta").val($("#cboTipoDocumentoVenta option:first").val());
+            $("#txtDocumentoCliente").val("");
+            $("#txtNombreCliente").val("");
+            $("#cboTipoDocumentoVenta").val($("#cboTipoDocumentoVenta option:first").val());
 
-                // Evento de notificación
-                swal("Registrado", `Numero de venta: ${responseJSON.objeto.numeroVenta}`, "success");
-            } else {
-                swal("Lo sentimos", "No se pudo registrar la venta", "error");
-            }
-        });
+            // Evento de notificación
+            swal("Registrado", `Numero de venta: ${responseJSON.objeto.numeroVenta}`, "success");
+        } else {
+            swal("Lo sentimos", "No se pudo registrar la venta", "error");
+        }
+    });
 });
