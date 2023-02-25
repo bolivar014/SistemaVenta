@@ -11,7 +11,7 @@ using SistemaVenta.Entity;
 
 namespace SistemaVenta.BLL.Implementacion
 {
-    internal class TipoDocumentoVentaService : ITipoDocumentoVentaService
+    public class TipoDocumentoVentaService : ITipoDocumentoVentaService
     {
         private readonly IGenericRepository<TipoDocumentoVenta> _repositorio;
 

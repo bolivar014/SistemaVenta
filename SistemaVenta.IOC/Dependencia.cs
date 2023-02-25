@@ -57,7 +57,7 @@ namespace SistemaVenta.IOC
             services.AddScoped<IProductoService, ProductoService>();
 
             // Dependencia de tipo documento venta
-            services.AddScoped<ITipoDocumentoVentaService, ITipoDocumentoVentaService>();
+            services.AddScoped<ITipoDocumentoVentaService, TipoDocumentoVentaService>();
 
             // Dependencia de Venta
             services.AddScoped<IVentaService, VentaService>();
