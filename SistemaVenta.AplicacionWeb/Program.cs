@@ -10,10 +10,21 @@ using SistemaVenta.AplicacionWeb.Utilidades.Extensiones;
 using DinkToPdf;
 using DinkToPdf.Contracts;
 
+// Inicializamos libreria de autenticación por cookies.
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Inyectamos inicio de sesión por cookies
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(option =>
+    {
+        option.LoginPath = "/Acceso/Login";
+        option.ExpireTimeSpan = TimeSpan.FromMinutes(20); // Tiempo de expiración de la cookie
+    });
 
 // Inyección de dependencias
 builder.Services.InyectarDependencia(builder.Configuration);
@@ -42,10 +53,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Integramos atenticación
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Acceso}/{action=Login}/{id?}");
 
 app.Run();
