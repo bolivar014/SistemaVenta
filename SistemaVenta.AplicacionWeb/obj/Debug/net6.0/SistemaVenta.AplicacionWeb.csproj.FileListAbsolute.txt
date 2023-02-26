@@ -287,3 +287,7 @@ C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVen
 C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\obj\Debug\net6.0\SistemaVenta.AplicacionWeb.pdb
 C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\obj\Debug\net6.0\SistemaVenta.AplicacionWeb.genruntimeconfig.cache
 C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\obj\Debug\net6.0\ref\SistemaVenta.AplicacionWeb.dll
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.dll
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.dylib
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.so
+C:\Users\JUAN-\OneDrive\Documentos\documentacion\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\DinkToPdf.dll

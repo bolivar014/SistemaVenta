@@ -127,6 +127,11 @@ $("#tbventa tbody").on("click", ".btn-info", function () {
         )
     })
 
+    // Generamos link para descargar PDF
+    $("#linkImprimir").attr("href", `/Venta/MostrarPDFVenta?numeroVenta=${d.numeroVenta}`);
+
     // Abrimos modal de datos
     $("#modalData").modal("show");
 });
+
+// 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dBttwBeZ+0KYH4yqtkNkYVUOMJhTcPCF3wL4JQ/jWlemY10mcm9+ntClDnYZvuwNAVhbFHfZNElVETap54eMHw==",
+  "dgSpecHash": "Su+yGsYWdnvQ1DxgJPR/2n1gXMYSP/pKDU4ShHN3kgR+m8Qh92213PBLcU5LEYt4dsheHsolzZm5rfEIjFIj7g==",
   "success": true,
   "projectFilePath": "C:\\Users\\JUAN-\\OneDrive\\Documentos\\documentacion\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\JUAN-\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\JUAN-\\.nuget\\packages\\dinktopdf\\1.0.8\\dinktopdf.1.0.8.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\firebaseauthentication.net\\3.7.1\\firebaseauthentication.net.3.7.1.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\firebasestorage.net\\1.0.3\\firebasestorage.net.1.0.3.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
@@ -181,6 +182,7 @@
     "C:\\Users\\JUAN-\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\system.threading.tasks.dataflow\\6.0.0\\system.threading.tasks.dataflow.6.0.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\JUAN-\\.nuget\\packages\\system.threading.thread\\4.0.0\\system.threading.thread.4.0.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\JUAN-\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",

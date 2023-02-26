@@ -8,6 +8,10 @@ using SistemaVenta.AplicacionWeb.Utilidades.Response;
 using SistemaVenta.BLL.Interfaces;
 using SistemaVenta.Entity;
 
+// 
+using DinkToPdf;
+using DinkToPdf.Contracts;
+
 namespace SistemaVenta.AplicacionWeb.Controllers
 {
     public class VentaController : Controller
@@ -15,16 +19,18 @@ namespace SistemaVenta.AplicacionWeb.Controllers
         private readonly ITipoDocumentoVentaService _tipoDocumentoVentaServicio;
         private readonly IVentaService _ventaServicio;
         private readonly IMapper _mapper;
-
+        private readonly IConverter _converter;
         public VentaController(
             ITipoDocumentoVentaService documentoVentaServicio,
             IVentaService ventaServicio,
-            IMapper mapper
+            IMapper mapper,
+            IConverter converter
         )
         {
             _tipoDocumentoVentaServicio = documentoVentaServicio;
             _ventaServicio = ventaServicio;
             _mapper = mapper;
+            _converter = converter;
         }
 
         public IActionResult NuevaVenta()
@@ -94,5 +100,32 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             return StatusCode(StatusCodes.Status200OK, vmHistorialVeta);
         }
 
+        public IActionResult MostrarPDFVenta(string numeroVenta)
+        {
+            // Ruta de la plantilla donde existe el PDF
+            string urlPlantillaVista = $"{this.Request.Scheme}://{this.Request.Host}/Plantilla/PDFVenta?numeroVenta={numeroVenta}";
+
+            // Generamos configuración para la creación del PDF
+            var pdf = new HtmlToPdfDocument()
+            {
+                GlobalSettings = new GlobalSettings()
+                {
+                    PaperSize = PaperKind.A4,
+                    Orientation = Orientation.Portrait,
+                },
+                Objects = {
+                    new ObjectSettings()
+                    {
+                        Page = urlPlantillaVista
+                    }
+                }
+            };
+
+            // Convertimos a PDF
+            var archivoPDF = _converter.Convert(pdf);
+
+            // Retornamos file
+            return File(archivoPDF, "application/pdf");
+        }
     }
 }
