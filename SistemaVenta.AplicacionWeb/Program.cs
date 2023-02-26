@@ -3,6 +3,7 @@ using SistemaVenta.AplicacionWeb.Utilidades.Automapper;
 
 // Agregamos referencia
 using SistemaVenta.IOC;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.InyectarDependencia(builder.Configuration);
 
 // Inyectamos depenencias AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 var app = builder.Build();
 

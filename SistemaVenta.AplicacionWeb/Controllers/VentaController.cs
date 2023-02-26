@@ -2,6 +2,7 @@
 
 // 
 using AutoMapper;
+using Newtonsoft.Json;
 using SistemaVenta.AplicacionWeb.Models.ViewModels;
 using SistemaVenta.AplicacionWeb.Utilidades.Response;
 using SistemaVenta.BLL.Interfaces;
