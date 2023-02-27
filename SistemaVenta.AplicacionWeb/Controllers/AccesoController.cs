@@ -27,13 +27,18 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             ClaimsPrincipal claimUser = HttpContext.User;
 
             // Si existe una sesión anterior, redireccionamos...
-            if(claimUser.Identity.IsAuthenticated)
+            if (claimUser.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Home");
             }
             return View();
         }
 
+        public async Task<IActionResult> RestablecerClave()
+        {
+            // Retornamos...
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Login(VMUsuarioLogin modelo)
         {
@@ -76,6 +81,40 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
             // Redireccionamos...
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RestablecerClave(VMUsuarioLogin modelo)
+        {
+            try
+            {
+                // Generamos URL de la template
+                string urlPlantillaCorreo = $"{this.Request.Scheme}://{this.Request.Host}/Plantilla/RestablecerClave?clave=[clave]";
+
+                // Ejecutamos petición para restablecer contraseña
+                bool resultado = await _usuarioServicio.RestablecerClave(modelo.Correo, urlPlantillaCorreo);
+
+                // Validamos
+                if (resultado)
+                {
+                    ViewData["Mensaje"] = "Listo, su contraseña fue restablecida. Revisar su correo...";
+                    ViewData["MensajeError"] = null;
+                }
+                else
+                {
+                    ViewData["Mensaje"] = "Se ha presentado problemas. Por favor inténtelo más tarde...";
+                    ViewData["MensajeError"] = null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ViewData["Mensaje"] = ex.Message;
+                ViewData["MensajeError"] = null;
+            }
+
+            // Retornamos...
+            return View();
         }
     }
 }
