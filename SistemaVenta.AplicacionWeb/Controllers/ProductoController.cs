@@ -8,9 +8,11 @@ using SistemaVenta.AplicacionWeb.Utilidades.Response;
 using SistemaVenta.BLL.Interfaces;
 using SistemaVenta.Entity;
 using NuGet.Packaging.Signing;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaVenta.AplicacionWeb.Controllers
 {
+    [Authorize]
     public class ProductoController : Controller
     {
         private readonly IMapper _mapper;
