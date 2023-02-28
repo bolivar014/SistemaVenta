@@ -300,7 +300,7 @@ namespace SistemaVenta.BLL.Implementacion
                 }
 
                 // Verificamos si la contraseña ingresada actualmente, es correcta
-                if (usuario_encontrado.Clave != _utilidadesService.ConvertirSHA256(ClaveNueva))
+                if ((usuario_encontrado.Clave).ToUpper() != _utilidadesService.ConvertirSHA256(ClaveActual))
                 {
                     throw new TaskCanceledException("La contraseña ingresada como actual, no es correcta...");
                 }
