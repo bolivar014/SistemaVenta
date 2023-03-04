@@ -64,6 +64,9 @@ namespace SistemaVenta.IOC
 
             // Dependencia de Dashboard
             services.AddScoped<IDashBoardService, DashBoardService>();
+
+            // Dependencia de menu
+            services.AddScoped<IMenuService, MenuService>();
         }
     }
 }

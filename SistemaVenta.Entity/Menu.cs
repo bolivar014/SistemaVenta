@@ -23,7 +23,7 @@ public partial class Menu
 
     public virtual Menu? IdMenuPadreNavigation { get; set; }
 
-    public virtual ICollection<Menu> InverseIdMenuPadreNavigation { get; } = new List<Menu>();
+    public virtual ICollection<Menu> InverseIdMenuPadreNavigation { get; set; } = new List<Menu>();
 
     public virtual ICollection<RolMenu> RolMenus { get; } = new List<RolMenu>();
 }
