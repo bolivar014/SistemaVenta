@@ -41,16 +41,18 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
+            <!-- INVOCAMOS COMPONENTE MENU -->
+            @await Component.InvokeAsync("Menu")
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+  @*          <li class="nav-item">
                 <a class="nav-link" href="@Url.Action("Index", "Dashboard")">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
-            </li>
+            </li>*@
 
             <!-- Nav Item - Administración Collapse Menu -->
-            <li class="nav-item">
+@*            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdministracion">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Administración</span>
@@ -61,10 +63,10 @@
                         <a class="collapse-item" href="@Url.Action("Index","Negocio")">Negocio</a>
                     </div>
                 </div>
-            </li>
+            </li>*@
 
             <!-- Nav Item - Inventario Collapse Menu -->
-            <li class="nav-item">
+@*            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInventario">
                     <i class="fas fa-fw fa-clipboard-list"></i>
                     <span>Inventario</span>
@@ -75,10 +77,10 @@
                         <a class="collapse-item" href="@Url.Action("Index","Producto")">Productos</a>
                     </div>
                 </div>
-            </li>
+            </li>*@
 
             <!-- Nav Item - Venta Collapse Menu -->
-            <li class="nav-item">
+@*            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVenta">
                     <i class="fas fa-fw fa-tags"></i>
                     <span>Ventas</span>
@@ -89,9 +91,9 @@
                         <a class="collapse-item" href="@Url.Action("HistorialVenta","Venta")">Historial Venta</a>
                     </div>
                 </div>
-            </li>
+            </li>*@
 
-            <!-- Nav Item - Reportes Collapse Menu -->
+            @*<!-- Nav Item - Reportes Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReportes">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -103,7 +105,7 @@
                     </div>
                 </div>
             </li>
-
+*@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Sidebar Toggler (Sidebar) -->
