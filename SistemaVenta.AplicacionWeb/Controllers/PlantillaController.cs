@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaVenta.AplicacionWeb.Controllers
 {
-    [Authorize]
+    // [Authorize]
     public class PlantillaController : Controller
     {
         private readonly IMapper _mapper;
